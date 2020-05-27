@@ -34,10 +34,16 @@ primes.push({ lat: 27, lng: 73, country: 'India' });
 //    {}
 
 // ];
+const sampleUserMessage = {
+  name: 'test-user',
+  email: 'test@yahoo.com',
+  message: 'This is test message.',
+};
 
 const seed = async () => {
   try {
     await db.Prime.remove();
+    await db.UserMessages.remove();
 
     await Promise.all(
       primes.map(async prime => {
@@ -45,6 +51,9 @@ const seed = async () => {
         await data.save();
       }),
     );
+
+    const message_data = await db.UserMessages.create(sampleUserMessage);
+    await message_data.save();
   } catch (err) {
     console.error(err);
   }

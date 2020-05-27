@@ -1,6 +1,7 @@
 module.exports = {
   ...require('./mapMarkersHandler'),
   ...require('./addLocationHandler'),
+  ...require('./sendMessageHandler'),
 };
 
 module.exports.error = (err, req, res, next) => {

@@ -10,3 +10,4 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.DATABASE);
 
 module.exports.Prime = require('./prime');
+module.exports.UserMessages = require('./userMessages');

@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 
 app.use('/api/mapMarkers', routes.mapMarkers);
 app.use('/api/addLocation', routes.addLocation);
+app.use('/api/sendMessage', routes.sendMessage);
 
 app.use('/', (req, res, next) => {
   let err = new Error('Not Found');
